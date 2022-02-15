@@ -1,8 +1,7 @@
 from rest_framework import serializers
 from api.models.VideoModel import VideoModel
 
-
-class VideoSerializer(serializers.Serializer):
+class VideoSerializer(serializers.ModelSerializer):
     class Meta:
         model = VideoModel
-        fields = '__all__'
+        fields = "__all__"

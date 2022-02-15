@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from api.views.ListVideosView import ListVideosView
+from api.views.DetailVideoView import DetailVideoView
+from api.views.CategoryListView import category_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', ListVideosView.as_view()),
+    path('api/<int:pk>', DetailVideoView.as_view()),
+    path('api/category/<int:pk>', category_list)
 ]
